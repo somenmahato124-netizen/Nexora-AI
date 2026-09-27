@@ -2056,6 +2056,30 @@ body {
 .made-by:hover strong {
     opacity: 0.8;
 }
+
+
+
+
+/* ===============================
+   Mobile Composer Position Fix
+================================ */
+
+@media (max-width: 700px) {
+
+    .composer-area {
+        bottom: 18px;
+        width: calc(100% - 24px);
+        padding-bottom: 0;
+    }
+
+    .composer {
+        width: 100%;
+    }
+
+    .composer-hint {
+        margin-top: 6px;
+    }
+}
 /* =========================================================
    END OF NEXORA AI CSS
 ========================================================= */
