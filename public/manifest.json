@@ -1,0 +1,29 @@
+{
+  "name": "Nexora AI",
+  "short_name": "Nexora AI",
+  "description": "Nexora AI — Learn, create, code, analyze and explore with an intelligent AI assistant.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#070910",
+  "theme_color": "#070910",
+  "icons": [
+    {
+      "src": "/assets/nexora-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
+
+"icons": [
+  {
+    "src": "/assets/Nexora-logo.png",
+    "sizes": "512x512",
+    "type": "image/png",
+    "purpose": "any maskable"
+  }
+]
