@@ -1,0 +1,2061 @@
+/* =========================================================
+   NEXORA AI
+   Premium AI Chat Interface
+   style.css
+========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+========================================================= */
+
+:root {
+
+  --bg: #070910;
+  --bg-soft: #0b0f18;
+  --surface: #101521;
+  --surface-2: #141a28;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.12);
+
+  --text: #f4f6fb;
+  --text-soft: #c8ceda;
+  --muted: #858d9e;
+
+  --accent: #7c6cff;
+  --accent-2: #a855f7;
+
+  --success: #45e69a;
+
+  --radius: 16px;
+
+  --shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35);
+
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+html {
+  width: 100%;
+  height: 100%;
+
+  scroll-behavior: smooth;
+}
+
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: "Inter", sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(124, 108, 255, 0.09),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(168, 85, 247, 0.06),
+      transparent 30%
+    ),
+    var(--bg);
+
+  color: var(--text);
+
+  overflow: hidden;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+button,
+textarea {
+  font-family: inherit;
+}
+
+
+button {
+  border: none;
+  outline: none;
+}
+
+
+textarea {
+  outline: none;
+}
+
+
+/* =========================================================
+   3. APP
+========================================================= */
+
+.app {
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.01),
+      transparent 30%
+    );
+}
+
+
+/* =========================================================
+   4. TOP HEADER
+========================================================= */
+
+.topbar {
+  width: 100%;
+  height: 68px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(7, 9, 16, 0.88);
+
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  position: relative;
+  z-index: 20;
+}
+
+
+/* Header content alignment */
+
+.topbar::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 900px;
+  max-width: calc(100% - 40px);
+
+  height: 100%;
+
+  transform: translateX(-50%);
+
+  pointer-events: none;
+}
+
+
+
+.topbar-inner {
+  width: 100%;
+  max-width: 900px;
+
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   5. HEADER BRAND
+========================================================= */
+
+.header-brand {
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+
+/* =========================================================
+   6. HEADER LOGO
+========================================================= */
+
+.header-logo {
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  overflow: hidden;
+
+  background: #0d1220;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 0 20px rgba(124, 108, 255, 0.12);
+}
+
+
+.header-logo img {
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   7. HEADER BRAND TEXT
+========================================================= */
+
+.header-brand-text {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.header-brand-text strong {
+
+  color: var(--text);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.2px;
+}
+
+
+.header-brand-text span {
+
+  color: var(--muted);
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   8. ONLINE STATUS
+========================================================= */
+
+.topbar-actions {
+
+  display: flex;
+  align-items: center;
+}
+
+
+.nexora-online {
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 8px 13px;
+
+  border-radius: 999px;
+
+  background: rgba(124, 108, 255, 0.05);
+
+  border: 1px solid rgba(124, 108, 255, 0.16);
+
+  color: var(--text);
+
+  font-size: 11px;
+
+  line-height: 1;
+
+  backdrop-filter: blur(10px);
+}
+
+
+.online-dot {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--success);
+
+  box-shadow:
+    0 0 7px rgba(69, 230, 154, 0.8),
+    0 0 15px rgba(69, 230, 154, 0.35);
+
+  animation: onlinePulse 2s ease-in-out infinite;
+}
+
+
+.online-text {
+
+  color: var(--text);
+
+  font-weight: 600;
+}
+
+
+.online-separator {
+
+  color: var(--muted);
+
+  opacity: 0.6;
+}
+
+
+.online-status {
+
+  color: var(--success);
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   ONLINE ANIMATION
+========================================================= */
+
+@keyframes onlinePulse {
+
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(0.82);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   9. MAIN AREA
+========================================================= */
+
+.main {
+
+  flex: 1;
+
+  width: 100%;
+
+  min-height: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   10. CHAT CONTAINER
+========================================================= */
+
+.chat-container {
+
+  width: 100%;
+
+  max-width: 1050px;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   11. MESSAGES AREA
+========================================================= */
+
+.messages {
+
+  flex: 1;
+
+  min-height: 0;
+
+  width: 100%;
+
+  padding: 35px 28px 150px;
+
+  overflow-y: auto;
+
+  scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+.messages::-webkit-scrollbar {
+
+  width: 7px;
+}
+
+
+.messages::-webkit-scrollbar-track {
+
+  background: transparent;
+}
+
+
+.messages::-webkit-scrollbar-thumb {
+
+  background: rgba(255, 255, 255, 0.09);
+
+  border-radius: 10px;
+}
+
+
+.messages::-webkit-scrollbar-thumb:hover {
+
+  background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   12. WELCOME SCREEN
+========================================================= */
+
+.welcome {
+
+  width: 100%;
+
+  min-height: calc(100vh - 280px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px 10px 60px;
+
+  animation: welcomeFade 0.6s ease;
+}
+
+
+@keyframes welcomeFade {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   13. WELCOME LOGO
+========================================================= */
+
+.welcome-logo {
+
+  width: 92px;
+  height: 92px;
+
+  margin-bottom: 26px;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  background: #0c1120;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 0 35px rgba(124, 108, 255, 0.16),
+    0 15px 45px rgba(0, 0, 0, 0.3);
+
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+
+.welcome-logo img {
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+
+    transform: translateY(0);
+
+  }
+
+  50% {
+
+    transform: translateY(-5px);
+
+  }
+
+}
+
+
+/* =========================================================
+   14. WELCOME TITLE
+========================================================= */
+
+.welcome h1 {
+
+  max-width: 700px;
+
+  margin-bottom: 13px;
+
+  color: var(--text);
+
+  font-size: clamp(30px, 4vw, 48px);
+
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   15. WELCOME DESCRIPTION
+========================================================= */
+
+.welcome > p {
+
+  max-width: 570px;
+
+  margin-bottom: 32px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   16. SUGGESTIONS
+========================================================= */
+
+.suggestions {
+
+  width: 100%;
+
+  max-width: 760px;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   17. SUGGESTION CARD
+========================================================= */
+
+.suggestion {
+
+  width: 100%;
+
+  min-height: 78px;
+
+  padding: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  color: var(--text);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.035),
+      rgba(255,255,255,0.015)
+    );
+
+  border: 1px solid var(--border);
+
+  border-radius: 15px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.suggestion:hover {
+
+  transform: translateY(-2px);
+
+  border-color: rgba(124, 108, 255, 0.3);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124,108,255,0.08),
+      rgba(255,255,255,0.025)
+    );
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.suggestion:active {
+
+  transform: translateY(0);
+
+}
+
+
+/* =========================================================
+   18. SUGGESTION ICON
+========================================================= */
+
+.suggestion-icon {
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(124, 108, 255, 0.09);
+
+  border: 1px solid rgba(124, 108, 255, 0.12);
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   19. SUGGESTION CONTENT
+========================================================= */
+
+.suggestion-content {
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.suggestion-content strong {
+
+  color: var(--text);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.suggestion-content small {
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   20. COMPOSER AREA
+========================================================= */
+
+.composer-area {
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  padding: 18px 28px 22px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(7, 9, 16, 0.88) 28%,
+      var(--bg) 60%
+    );
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   21. COMPOSER
+========================================================= */
+
+.composer {
+
+  width: 100%;
+
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 9px;
+
+  padding: 8px 9px 8px 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 23, 36, 0.96),
+      rgba(13, 17, 27, 0.96)
+    );
+
+  border: 1px solid var(--border-light);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.01);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.composer:focus-within {
+
+  border-color: rgba(124, 108, 255, 0.35);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(124, 108, 255, 0.06);
+}
+
+
+/* =========================================================
+   22. ATTACH BUTTON
+========================================================= */
+
+.attach-btn {
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 23px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.attach-btn:hover {
+
+  color: var(--text);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   23. MESSAGE TEXTAREA
+========================================================= */
+
+#messageInput {
+
+  flex: 1;
+
+  width: 100%;
+
+  min-height: 40px;
+
+  max-height: 180px;
+
+  padding: 10px 5px;
+
+  resize: none;
+
+  overflow-y: auto;
+
+  background: transparent;
+
+  border: none;
+
+  color: var(--text);
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+
+#messageInput::placeholder {
+
+  color: #70788a;
+}
+
+
+#messageInput:focus {
+
+  outline: none;
+}
+
+
+#messageInput::-webkit-scrollbar {
+
+  width: 5px;
+}
+
+
+#messageInput::-webkit-scrollbar-track {
+
+  background: transparent;
+}
+
+
+#messageInput::-webkit-scrollbar-thumb {
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   24. SEND BUTTON
+========================================================= */
+
+.send-btn {
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7568ff,
+      #9a5cff
+    );
+
+  font-size: 20px;
+
+  font-weight: 500;
+
+  box-shadow:
+    0 6px 18px rgba(124, 108, 255, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.send-btn:hover {
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 24px rgba(124, 108, 255, 0.38);
+}
+
+
+.send-btn:active {
+
+  transform: translateY(1px);
+
+}
+
+
+.send-btn:disabled {
+
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   25. COMPOSER HINT
+========================================================= */
+
+.composer-hint {
+
+  margin-top: 9px;
+
+  text-align: center;
+
+  color: #626a7a;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   26. USER / AI MESSAGE
+========================================================= */
+
+.message {
+
+  width: 100%;
+
+  display: flex;
+
+  margin-bottom: 22px;
+
+  animation: messageAppear 0.25s ease;
+}
+
+
+@keyframes messageAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(7px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+
+/* USER MESSAGE */
+
+.message.user {
+
+  justify-content: flex-end;
+}
+
+
+.message.user .message-content {
+
+  max-width: 75%;
+
+  padding: 12px 15px;
+
+  border-radius: 17px 17px 4px 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124,108,255,0.18),
+      rgba(168,85,247,0.13)
+    );
+
+  border: 1px solid rgba(124,108,255,0.18);
+
+  color: var(--text);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* ASSISTANT MESSAGE */
+
+.message.assistant {
+
+  justify-content: flex-start;
+}
+
+
+.message.assistant .message-content {
+
+  width: 100%;
+
+  max-width: 820px;
+
+  color: var(--text-soft);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   27. MESSAGE CONTENT ELEMENTS
+========================================================= */
+
+.message-content p {
+
+  margin-bottom: 10px;
+}
+
+
+.message-content p:last-child {
+
+  margin-bottom: 0;
+}
+
+
+.message-content strong {
+
+  color: var(--text);
+
+  font-weight: 650;
+}
+
+
+.message-content ul,
+.message-content ol {
+
+  margin:
+
+    10px 0
+
+    10px 22px;
+}
+
+
+.message-content li {
+
+  margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   28. CODE BLOCK
+========================================================= */
+
+.message-content pre {
+
+  margin: 14px 0;
+
+  padding: 16px;
+
+  overflow-x: auto;
+
+  background: #080b12;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+.message-content code {
+
+  font-family:
+    "Cascadia Code",
+    "Consolas",
+    monospace;
+
+  font-size: 12px;
+}
+
+
+.message-content pre code {
+
+  color: #dce2ef;
+
+  line-height: 1.65;
+}
+
+
+/* INLINE CODE */
+
+.message-content :not(pre) > code {
+
+  padding: 3px 6px;
+
+  border-radius: 6px;
+
+  background: rgba(255,255,255,0.07);
+
+  color: #ddd8ff;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   29. COPY CODE BUTTON
+========================================================= */
+
+.copy-code-btn {
+
+  cursor: pointer;
+
+  margin-bottom: 6px;
+
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid var(--border);
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.copy-code-btn:hover {
+
+  background: rgba(124,108,255,0.12);
+
+  color: var(--text);
+}
+
+
+/* =========================================================
+   30. TYPING INDICATOR
+========================================================= */
+
+.typing-indicator {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 7px 0;
+}
+
+
+.typing-indicator span {
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #8991a3;
+
+  animation: typing 1.2s infinite ease-in-out;
+}
+
+
+.typing-indicator span:nth-child(2) {
+
+  animation-delay: 0.15s;
+}
+
+
+.typing-indicator span:nth-child(3) {
+
+  animation-delay: 0.3s;
+}
+
+
+@keyframes typing {
+
+  0%,
+  60%,
+  100% {
+
+    opacity: 0.3;
+
+    transform: translateY(0);
+
+  }
+
+  30% {
+
+    opacity: 1;
+
+    transform: translateY(-3px);
+
+  }
+
+}
+
+
+/* =========================================================
+   31. LINKS
+========================================================= */
+
+.message-content a {
+
+  color: #9f94ff;
+
+  text-decoration: none;
+}
+
+
+.message-content a:hover {
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   32. MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  body {
+
+    overflow: hidden;
+
+  }
+
+
+  .topbar {
+
+    height: 62px;
+
+    padding: 0 14px;
+
+  }
+
+
+  .header-logo {
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+
+  }
+
+
+  .header-brand-text strong {
+
+    font-size: 13px;
+
+  }
+
+
+  .header-brand-text span {
+
+    display: none;
+
+  }
+
+
+  .nexora-online {
+
+    padding: 7px 10px;
+
+    font-size: 10px;
+
+  }
+
+
+  .messages {
+
+    padding:
+
+      25px
+
+      16px
+
+      145px;
+
+  }
+
+
+  .welcome {
+
+    min-height: calc(100vh - 240px);
+
+    padding:
+
+      20px
+
+      5px
+
+      40px;
+
+  }
+
+
+  .welcome-logo {
+
+    width: 76px;
+    height: 76px;
+
+    margin-bottom: 20px;
+
+    border-radius: 21px;
+
+  }
+
+
+  .welcome h1 {
+
+    font-size: 30px;
+
+    letter-spacing: -1px;
+
+  }
+
+
+  .welcome > p {
+
+    max-width: 90%;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+
+  }
+
+
+  .suggestions {
+
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+
+    max-width: 500px;
+
+  }
+
+
+  .suggestion {
+
+    min-height: 67px;
+
+    padding: 12px;
+
+  }
+
+
+  .suggestion-icon {
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 17px;
+
+  }
+
+
+  .suggestion-content strong {
+
+    font-size: 12px;
+
+  }
+
+
+  .suggestion-content small {
+
+    font-size: 10px;
+
+  }
+
+
+  .composer-area {
+
+    padding:
+
+      12px
+
+      12px
+
+      16px;
+
+  }
+
+
+  .composer {
+
+    min-height: 54px;
+
+    border-radius: 16px;
+
+    padding:
+
+      7px
+
+      8px
+
+      7px
+
+      8px;
+
+  }
+
+
+  .attach-btn,
+  .send-btn {
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 11px;
+
+  }
+
+
+  #messageInput {
+
+    font-size: 13px;
+
+  }
+
+
+  .composer-hint {
+
+    font-size: 9px;
+
+    margin-top: 7px;
+
+  }
+
+
+  .message.user .message-content {
+
+    max-width: 88%;
+
+    font-size: 13px;
+
+  }
+
+
+  .message.assistant .message-content {
+
+    font-size: 13px;
+
+  }
+
+}
+
+
+/* =========================================================
+   33. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .online-text,
+  .online-separator {
+
+    display: none;
+
+  }
+
+
+  .nexora-online {
+
+    padding:
+
+      8px
+
+      10px;
+
+  }
+
+
+  .welcome h1 {
+
+    font-size: 27px;
+
+  }
+
+
+  .welcome > p {
+
+    font-size: 12px;
+
+  }
+
+
+  .suggestion {
+
+    min-height: 64px;
+
+  }
+
+
+  .suggestion-content small {
+
+    max-width: 190px;
+
+  }
+
+}
+
+
+/* =========================================================
+   34. VERY LARGE SCREEN
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .chat-container {
+
+    max-width: 1150px;
+
+  }
+
+
+  .welcome h1 {
+
+    font-size: 50px;
+
+  }
+
+
+  .suggestions {
+
+    max-width: 820px;
+
+  }
+
+}
+
+
+/* =========================================================
+   35. SELECTION
+========================================================= */
+
+::selection {
+
+  background: rgba(124,108,255,0.35);
+
+  color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   GENERATED AI IMAGE
+========================================================= */
+
+.generated-image-wrapper {
+    width: 100%;
+    max-width: 720px;
+    margin-top: 4px;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+
+.generated-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    object-fit: contain;
+}
+
+
+.generated-image-wrapper:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+
+@media (max-width: 700px) {
+
+    .generated-image-wrapper {
+        max-width: 100%;
+        border-radius: 14px;
+    }
+
+    .generated-image {
+        max-height: 520px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+   SMALL COPY BUTTON
+   ============================================ */
+
+.copy-code,
+.copy-response {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 26px;
+    padding: 0 9px;
+
+    margin-top: 6px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.48);
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.copy-code:hover,
+.copy-response:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.copy-code:active,
+.copy-response:active {
+    transform: scale(0.97);
+}
+
+
+
+
+
+.made-by {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.made-by strong {
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 600;
+}
+
+
+
+
+
+
+/* ============================================
+   CENTERED COMPOSER
+   ============================================ */
+
+.composer-area {
+    left: 50%;
+    right: auto;
+    width: 99%;
+    max-width: 800px;
+    transform: translateX(-50%);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.composer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .composer-area {
+        width: calc(100% - 24px);
+        max-width: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+   INITIAL PAGE — NO SCROLLBAR
+   ============================================ */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.app {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    height: calc(100vh - 68px);
+    overflow: hidden;
+}
+
+.messages {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: none;
+}
+
+.messages::-webkit-scrollbar {
+    display: none;
+}
+
+/* Composer stays at bottom */
+.composer-area {
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* ============================================
+   FIXED INITIAL CHAT LAYOUT
+   ============================================ */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.app {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    height: calc(100vh - 68px);
+    overflow: hidden;
+}
+
+.chat-container {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.messages {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 150px;
+    scrollbar-width: none;
+}
+
+.messages::-webkit-scrollbar {
+    display: none;
+}
+
+/* Bottom composer always visible */
+.composer-area {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    bottom: 0;
+
+    width: 90%;
+    max-width: 700px;
+
+    transform: translateX(-50%);
+
+    padding: 18px 0 20px;
+}
+
+/* Keep composer centered */
+.composer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .composer-area {
+        width: calc(100% - 24px);
+        padding-bottom: 14px;
+    }
+
+    .messages {
+        padding-bottom: 135px;
+    }
+}
+
+
+
+/* ============================================
+   WELCOME CONTENT — MOVE UP
+   ============================================ */
+
+.welcome {
+    padding-top: 30px;
+    transform: translateY(-45px);
+}
+
+/* Desktop */
+@media (min-width: 701px) {
+    .welcome {
+        transform: translateY(-65px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .welcome {
+        padding-top: 20px;
+        transform: translateY(-25px);
+    }
+}
+
+
+.welcome p {
+    transform: translateY(-10px);
+}
+
+.suggestions {
+    transform: translateY(-10px);
+}
+
+
+
+.composer-area {
+    width: calc(100% - 40px);
+    max-width: none;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.composer {
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .composer-area {
+        width: calc(100% - 24px);
+    }
+}
+
+
+
+.made-by {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    margin-top: 9px;
+
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.made-by strong {
+    font-weight: 600;
+
+    background: linear-gradient(
+        90deg,
+        #6ee7ff,
+        #a78bfa,
+        #f472b6
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    transition: opacity 0.25s ease;
+}
+
+.made-by:hover strong {
+    opacity: 0.8;
+}
+/* =========================================================
+   END OF NEXORA AI CSS
+========================================================= */

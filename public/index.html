@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Nexora AI — Learn, create, code, analyze and explore with an intelligent AI assistant."
+  >
+
+  <meta
+    name="theme-color"
+    content="#070910"
+  >
+
+  <title>Nexora AI</title>
+
+
+  <!-- =====================================================
+       GOOGLE FONT
+  ====================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       MAIN CSS
+  ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="/style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       NEXORA AI APPLICATION
+  ====================================================== -->
+
+  <div class="app">
+
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
+
+    <header class="topbar">
+
+      <div class="topbar-inner">
+
+
+        <!-- BRAND -->
+
+        <div class="header-brand">
+
+          <div class="header-logo">
+
+            <img
+              src="/assets/nexora-logo.png"
+              alt="Nexora AI Logo"
+              draggable="false"
+            >
+
+          </div>
+
+
+          <div class="header-brand-text">
+
+            <strong>
+              Nexora AI
+            </strong>
+
+            <span>
+              AI Assistant
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ONLINE STATUS -->
+
+        <div class="topbar-actions">
+
+          <div
+            class="nexora-online"
+            aria-label="Nexora AI is online"
+          >
+
+            <span
+              class="online-dot"
+              aria-hidden="true"
+            ></span>
+
+            <span class="online-text">
+              Nexora AI
+            </span>
+
+            <span
+              class="online-separator"
+              aria-hidden="true"
+            >
+              •
+            </span>
+
+            <span class="online-status">
+              Online
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================
+         MAIN CHAT
+    ==================================================== -->
+
+    <main class="main">
+
+      <section
+        class="chat-container"
+        aria-label="Nexora AI Chat"
+      >
+
+
+        <!-- =================================================
+             MESSAGES AREA
+        ================================================== -->
+
+        <div
+          class="messages"
+          id="messages"
+          aria-live="polite"
+          aria-atomic="false"
+        >
+
+
+          <!-- ===============================================
+               WELCOME SCREEN
+          ================================================ -->
+
+          <div
+            class="welcome"
+            id="welcome"
+          >
+
+
+            <!-- WELCOME LOGO -->
+
+            <div class="welcome-logo">
+
+              <img
+                src="/assets/nexora-logo.png"
+                alt="Nexora AI"
+                draggable="false"
+              >
+
+            </div>
+
+
+            <!-- WELCOME TITLE -->
+
+            <h1>
+              What can I help you with?
+            </h1>
+
+
+            <!-- WELCOME DESCRIPTION -->
+
+            <p>
+              Ask Nexora AI anything.
+              Learn, create, code, brainstorm
+              and explore ideas.
+            </p>
+
+
+            <!-- =============================================
+                 SUGGESTION CARDS
+            ============================================== -->
+
+            <div class="suggestions">
+
+
+              <!-- CARD 1 -->
+
+              <button
+                class="suggestion"
+                type="button"
+                data-prompt="Explain machine learning in simple words"
+              >
+
+                <span
+                  class="suggestion-icon"
+                  aria-hidden="true"
+                >
+                  🧠
+                </span>
+
+
+                <div class="suggestion-content">
+
+                  <strong>
+                    Learn something
+                  </strong>
+
+                  <small>
+                    Explain machine learning simply
+                  </small>
+
+                </div>
+
+              </button>
+
+
+              <!-- CARD 2 -->
+
+              <button
+                class="suggestion"
+                type="button"
+                data-prompt="Write a professional Python program for a beginner"
+              >
+
+                <span
+                  class="suggestion-icon"
+                  aria-hidden="true"
+                >
+                  💻
+                </span>
+
+
+                <div class="suggestion-content">
+
+                  <strong>
+                    Write code
+                  </strong>
+
+                  <small>
+                    Create a Python program
+                  </small>
+
+                </div>
+
+              </button>
+
+
+              <!-- CARD 3 -->
+
+              <button
+                class="suggestion"
+                type="button"
+                data-prompt="Give me 10 creative project ideas for a computer science student"
+              >
+
+                <span
+                  class="suggestion-icon"
+                  aria-hidden="true"
+                >
+                  💡
+                </span>
+
+
+                <div class="suggestion-content">
+
+                  <strong>
+                    Get ideas
+                  </strong>
+
+                  <small>
+                    Find project ideas
+                  </small>
+
+                </div>
+
+              </button>
+
+
+              <!-- CARD 4 -->
+
+              <button
+                class="suggestion"
+                type="button"
+                data-prompt="Help me create a professional resume"
+              >
+
+                <span
+                  class="suggestion-icon"
+                  aria-hidden="true"
+                >
+                  📄
+                </span>
+
+
+                <div class="suggestion-content">
+
+                  <strong>
+                    Career help
+                  </strong>
+
+                  <small>
+                    Build a professional resume
+                  </small>
+
+                </div>
+
+              </button>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MESSAGE COMPOSER
+        ================================================== -->
+
+        <div class="composer-area">
+
+
+          <!-- COMPOSER -->
+
+          <div class="composer">
+
+
+            <!-- ATTACH BUTTON -->
+
+            <button
+              class="attach-btn"
+              id="attachBtn"
+              title="Attach file"
+              aria-label="Attach a file"
+              type="button"
+            >
+
+              <span aria-hidden="true">
+                ＋
+              </span>
+
+            </button>
+
+
+            <!-- MESSAGE INPUT -->
+
+            <textarea
+              id="messageInput"
+              rows="1"
+              placeholder="Message Nexora AI..."
+              autocomplete="off"
+              aria-label="Message Nexora AI"
+            ></textarea>
+
+
+            <!-- SEND BUTTON -->
+
+            <button
+              class="send-btn"
+              id="sendBtn"
+              title="Send message"
+              aria-label="Send message"
+              type="button"
+            >
+
+              <span aria-hidden="true">
+                ↑
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+          <!-- DISCLAIMER -->
+
+  <div class="made-by">
+    <span>✦</span>
+    Made by <strong>Nexora Technologies</strong>
+    <span>✦</span>
+</div>
+
+
+        </div>
+
+
+      </section>
+
+    </main>
+
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="/script.js"></script>
+
+
+</body>
+
+</html>
